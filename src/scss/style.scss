@@ -1,5 +1,11 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
+$gutter: 15px;
 $bg-color: #fff;
+$btn-wedding-bg: #C69075;
+$btn-wedding-color: #fff;
+$btn-wedding-bg-hover: $secondary;
+$btn-wedding-color-hover: $btn-wedding-color;
+$countdown-width: 400px;
 
 body {
     background-color: $bg-color;
@@ -10,7 +16,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 35%;
-    @include media-breakpoint-up(sm) { padding-top: 25%; }
+    @include media-breakpoint-up(sm) { padding-top: 20%; }
 
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
@@ -29,26 +35,232 @@ body {
     }
 }
 .container {
-    background: rgba(255,255,255,0.6);
-    width: 80%;
+    width: 95%;
     @include media-breakpoint-up(sm) { width: 80%; }
+
+    &.bg {
+        background: rgba(255,255,255,0.6);
+    }
+}
+.row {
+    margin-right:0;
+    margin-left:0;
 }
 .lg {
-    
+    font-size: 1.15em;
+    margin-bottom: 2px;
+}
+.button {
+    background-color: $btn-wedding-bg;
+    color: $btn-wedding-color;
+    padding: 0.2em 0.6em;
+
+    span {
+        font-size: 0.6em;
+    }
+    &:hover {
+        text-decoration: none;
+        color: $btn-wedding-color-hover;
+        background-color: $btn-wedding-bg-hover;
+    }
+}
+.header {
+    padding-top: $gutter*2;
+    @include media-breakpoint-up(sm) { padding-top: $gutter*4; }
 }
 h1 {
-    padding: 20px 0;
     margin: 0 auto;
     font-family: $font-family-headline;
-    font-size: 3.0rem;
+    font-size: 2.6rem;
     color: $secondary;
     text-align: center;
     line-height: 0.8em;
-    @include media-breakpoint-up(sm) { font-size: 4.4rem; }
+    @include media-breakpoint-up(sm) { font-size: 4.2rem; }
 
 
     .smaller {
 		font-size: 0.8em;
 		display: block;
 	}
+}
+h2 {
+    font-family: $font-family-headline;
+    font-size: 2.2em;
+    line-height: .5;
+    color: $secondary;
+}
+h3 {
+    color: $primary;
+    font-size: 1.5em;
+    margin-bottom: $gutter;
+}
+.main-nav {
+    width: 100%;
+    margin-top: 35px;
+    font-size: 1.25em;
+    border-top: 1px solid $primary;
+    border-bottom: 1px solid $primary; 
+}
+.nav-link {
+    margin: 0 auto !important;
+    span {
+        font-size: 0.6em;
+    }
+}
+
+.countdown {
+    max-width: $countdown-width;
+    width: 100%;
+    margin:  $gutter*3 auto 0 auto;
+}
+.countdown-header {
+    width: 100%;
+    padding: $gutter/2 0;
+    background-color: $primary;
+    color: #fff;
+    text-align: center;
+    font-size: 1.7em;
+    line-height: 1em;
+    @include media-breakpoint-up(sm) { font-size: 2rem; }
+}
+ul.countdown-boxes {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        border: 1px solid $primary;
+        background-color: $bg-color;
+        color: $primary;
+        text-align: center;
+        padding: 0 $gutter $gutter/2 $gutter;
+        display: block;
+        margin: $gutter auto 0 auto;
+        line-height: 2.5em;
+        span {
+            display: block;
+            font-family: $font-family-headline;
+            font-size: 3em;
+            @media only screen and (max-width: $countdown-width) {
+                font-size: 2em;
+            }
+        }
+    }
+}
+.box {
+    background-image: url(/img/bg-leaves.jpg);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    padding-bottom: 10%;
+    margin-top: $gutter*2;
+    
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+        background-image: url(/img/bg-leaves@2x.jpg);
+    }
+
+    @include media-breakpoint-up(lg) { 
+        background-image: url(/img/bg-leaves-l.jpg);
+        margin-top: $gutter*5;
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+            background-image: url(/img/bg-leaves-l@2x.jpg);
+
+        }
+    }
+
+}
+
+.box-revert {
+    background-image: url(/img/bg-leaves.jpg);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    padding-bottom: 10%;
+    margin-top: $gutter*2;
+    transform: scaleX(-1);
+    
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+        background-image: url(/img/bg-leaves@2x.jpg);
+    }
+
+    @include media-breakpoint-up(lg) { 
+        background-image: url(/img/bg-leaves-l.jpg);
+        margin-top: $gutter*5;
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+            background-image: url(/img/bg-leaves-l@2x.jpg);
+
+        }
+    }
+    &>div {
+        transform: scaleX(-1);
+    }
+
+}
+
+.form-group {
+    @include media-breakpoint-up(md) { 
+        text-align: right;
+    }
+    label {
+        @include media-breakpoint-up(md) { 
+            display: inline;
+        }
+    }
+    input {
+        
+        @include media-breakpoint-up(md) { 
+            display: inline;
+            width: 90%;
+        }
+    } 
+}
+.form-btn {
+    width: 100%;
+
+    @include media-breakpoint-up(md) { 
+        width: 90%;
+        margin-left: auto;
+        text-align: right;
+    }
+
+    button {
+        width: 100%;
+        border: 0;
+        font-size: 1.15em;
+        line-height: 1.6em;
+        margin-bottom: $gutter/2;
+
+        @include media-breakpoint-up(md) { 
+            width: calc(50% - 2px);
+            font-size: 1.15em;
+            line-height: 1.6em;
+        }
+    }
+}
+.box-no {
+    background-color: $primary;
+    display: block;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto $gutter*1.5 auto;
+    font-family: $font-family-headline;
+    font-size: 3.3em;
+    color: #fff;
+    text-align: center;
+}
+.box-end {
+    margin: $gutter*4 0 $gutter*6 0;
+    font-family: $font-family-headline;
+    font-size: 2.6rem;
+    color: $secondary;
+    text-align: right;
+    line-height: 0.8em;
+    @include media-breakpoint-up(lg) { font-size: 4.2rem; }
 }

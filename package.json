@@ -12,7 +12,7 @@
     "lint": "eslint src/js",
     "uglify": "uglifyjs src/js/*.js -m -o dist/js/app.js",
     "imagemin": "imagemin src/img --out-dir=dist/img -p",
-    "copymap" : "cp src/css/style.css.map dist/css",
+    "copymap": "cp src/css/style.css.map dist/css",
     "watch:sass": "onchange 'src/scss/*.scss' -- npm run sass",
     "watch:css": "onchange 'dist/css/*.css' -- npm run autoprefixer",
     "watch:js": "onchange 'src/js/*.js' -- npm run uglify",
@@ -23,6 +23,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
+    "npm install mongodb": "^3.2.7",
     "popper.js": "^1.15.0"
   },
   "devDependencies": {
