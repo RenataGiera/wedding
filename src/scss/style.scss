@@ -11,41 +11,41 @@ body {
     background-color: $bg-color;
 }
 .all {
-    background: url(/img/bg.jpg) $bg-color no-repeat center top;
+    background: url(/img/bg1.jpg) $bg-color no-repeat center top;
     background-size: contain;
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 35%;
+    @media only screen and (max-width: $countdown-width) {
+        background-size: auto;
+    }
     @include media-breakpoint-up(sm) { padding-top: 20%; }
 
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-        background: url(/img/bg@2x.jpg) $bg-color no-repeat center top;
-        background-size: contain;
+        background: url(/img/bg1@2x.jpg) $bg-color no-repeat center top;
+        background-size: 110%;
     }
 
     @include media-breakpoint-up(md) { 
-        background: url(/img/bg-l.jpg) $bg-color no-repeat center top;
+        background: url(/img/bg1-l.jpg) $bg-color no-repeat center top;
         background-size: contain;
 
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-            background: url(/img/bg-l@2x.jpg) $bg-color no-repeat center top;
+            background: url(/img/bg1-l@2x.jpg) $bg-color no-repeat center top;
             background-size: contain;
         }
     }
 }
 .container {
-    width: 95%;
+    width: 90%;
     @include media-breakpoint-up(sm) { width: 80%; }
 
     &.bg {
         background: rgba(255,255,255,0.6);
     }
 }
-.row {
-    margin-right:0;
-    margin-left:0;
-}
+
 .lg {
     font-size: 1.15em;
     margin-bottom: 2px;
@@ -57,6 +57,7 @@ body {
 
     span {
         font-size: 0.6em;
+        color: $btn-wedding-color;
     }
     &:hover {
         text-decoration: none;
@@ -71,10 +72,10 @@ body {
 h1 {
     margin: 0 auto;
     font-family: $font-family-headline;
-    font-size: 2.6rem;
+    font-size: 3.4rem;
     color: $secondary;
     text-align: center;
-    line-height: 0.8em;
+    line-height: 0.84em;
     @include media-breakpoint-up(sm) { font-size: 4.2rem; }
 
 
@@ -156,9 +157,9 @@ ul.countdown-boxes {
     background-position: bottom left;
     background-repeat: no-repeat;
     background-size: 70%;
-    padding-bottom: 10%;
+    padding: 0 0 7% 5%;
     margin-top: $gutter*2;
-    
+   
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
         background-image: url(/img/bg-leaves@2x.jpg);
     }
@@ -176,32 +177,40 @@ ul.countdown-boxes {
 }
 
 .box-revert {
-    background-image: url(/img/bg-leaves.jpg);
-    background-position: bottom left;
-    background-repeat: no-repeat;
-    background-size: 70%;
-    padding-bottom: 10%;
-    margin-top: $gutter*2;
+    @extend .box;
     transform: scaleX(-1);
     
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-        background-image: url(/img/bg-leaves@2x.jpg);
-    }
-
-    @include media-breakpoint-up(lg) { 
-        background-image: url(/img/bg-leaves-l.jpg);
-        margin-top: $gutter*5;
-
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-            background-image: url(/img/bg-leaves-l@2x.jpg);
-
-        }
-    }
     &>div {
         transform: scaleX(-1);
     }
 
 }
+
+.comfirm-thankyou {
+    @extend h3;
+    font-size: 1.5em;
+    padding: $gutter*2 $gutter;
+    background-color: #F2F2F2;
+    text-align: center;
+}
+.alert-danger {
+    margin-bottom: $gutter/2;
+}
+.radio {
+    background-color: $primary;
+    color: $btn-wedding-color;
+    padding: 0.4em 0.6em;
+    width:100%;
+    margin-top: 5px;
+    @include media-breakpoint-up(md) { 
+        width:47%;
+    }
+}
+
+.checkbox {
+    padding-top: $gutter/2;
+}
+
 
 .form-group {
     @include media-breakpoint-up(md) { 
@@ -222,12 +231,8 @@ ul.countdown-boxes {
 }
 .form-btn {
     width: 100%;
-
-    @include media-breakpoint-up(md) { 
-        width: 90%;
-        margin-left: auto;
-        text-align: right;
-    }
+    margin-top: 1.5em;
+    margin-bottom: 2em;
 
     button {
         width: 100%;
@@ -237,7 +242,7 @@ ul.countdown-boxes {
         margin-bottom: $gutter/2;
 
         @include media-breakpoint-up(md) { 
-            width: calc(50% - 2px);
+            width: 100%;
             font-size: 1.15em;
             line-height: 1.6em;
         }
@@ -254,7 +259,33 @@ ul.countdown-boxes {
     font-size: 3.3em;
     color: #fff;
     text-align: center;
+
+    &::before {
+        content: "";
+        border-top: 1px solid $primary;
+        width: 35%;
+        position: absolute;
+        top: 35%;
+        left: $gutter;
+    }
+    &::after {
+        content: "";
+        border-top: 1px solid $primary;
+        width: 35%;
+        position: absolute;
+        top: 35%;
+        right: $gutter;
+    }
+    @include media-breakpoint-up(lg) { 
+        &::before {
+            border: 0px;
+        }
+        &::after {
+            border: 0px;
+        }
+    }
 }
+
 .box-end {
     margin: $gutter*4 0 $gutter*6 0;
     font-family: $font-family-headline;

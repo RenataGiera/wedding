@@ -1,1 +1,1 @@
-console.log("ffd");console.log("ffdggg");console.log("bbbbbbbbb");
+require("whatwg-fetch");function getUsers(){return get("users")}function get(e){return fetch(e).then(onSuccess,onError)}function onSuccess(e){return e.json()}function onError(e){console.log(e)}getUsers();
