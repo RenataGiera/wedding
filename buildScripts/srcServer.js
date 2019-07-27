@@ -3,12 +3,12 @@ const path  = require('path');
 const open= require('open');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('/', function(reg, res) {
-    res.sendFile(path.join(__dirname, '../dist/index.html'));
+    res.sendFile(path.join(__dirname, '../dist/index.php'));
 });
 
 app.get('/users', function(req, res){
