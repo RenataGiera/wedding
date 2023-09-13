@@ -12,7 +12,7 @@ body {
 }
 
 .all {
-    background: url(/img/bg1.jpg) $bg-color no-repeat center top;
+    background: url('../img/bg1.jpg') $bg-color no-repeat center top;
     background-size: contain;
     max-width: 1200px;
     margin: 0 auto;
@@ -95,6 +95,12 @@ h3 {
     color: $primary;
     font-size: 1.5em;
     margin-bottom: $gutter;
+}
+h4 {
+    color: $primary;
+    font-size: 1.5em;
+    margin-top: $gutter;
+    margin-bottom: 0;
 }
 .main-nav {
     width: 100%;

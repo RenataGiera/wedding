@@ -1,6 +1,6 @@
 <?php
 $subjectPrefix = '[Contato via Site]';
-$emailTo = 'magdalena.widawska@gmail.com';
+$emailTo = 'renatagiera@gmail.com';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name  = stripslashes(trim($_POST['name']));
@@ -58,14 +58,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://fonts.googleapis.com/css?family=Allura|EB+Garamond&display=swap" rel="stylesheet">
     <title>Magda & Łukasz wedding</title>
     <!-- Bootstrap core CSS -->
-    <script src="/js/app.js"></script>
-    <link href="css/style1.css" rel="stylesheet">
+    <script src="js/app.js"></script>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <div class="all">
         <div class="container">
             <div class="row lg">
-                <a class="button" href="/">Po polsku, proszę <span> ▶</span></a>
+                <a class="button" href="index-pl.php">Po polsku, proszę <span> ▶</span></a>
             </div>
         </div>
         <div class="container bg ">

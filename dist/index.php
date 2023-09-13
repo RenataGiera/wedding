@@ -1,6 +1,6 @@
 <?php
 $subjectPrefix = '[Contato via Site]';
-$emailTo = 'magdalena.widawska@gmail.com';
+$emailTo = 'renatagiera@gmail.com';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$name  = stripslashes(trim($_POST['name']));
@@ -58,14 +58,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<link href="https://fonts.googleapis.com/css?family=Allura|EB+Garamond&display=swap" rel="stylesheet">
 	<title>Ślub Magdy i Łukasza</title>
 	<!-- Bootstrap core CSS -->
-	<script src="/js/app.js"></script>
-	<link href="css/style1.css" rel="stylesheet">
+	<script src="js/app.js"></script>
+	<link href="css/style.css" rel="stylesheet">
   </head>
   <body>
 	<div class="all">
 		<div class="container">
 			<div class="row lg">
-				<a class="button" href="en.php">in English, please <span> ▶</span></a>
+				<a class="button" href="index.php">in English, please <span> ▶</span></a>
 			</div>
 		</div>
 		<div class="container bg ">
@@ -76,12 +76,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			<div class="row">
 				<nav class="nav main-nav">
-					<a class="nav-link active" href="#">Potwierdzenie przybycia <span> ▶</span></a>
-					<a class="nav-link" href="#">Inforacje organizacyjne <span> ▶</span></a>
-					<a class="nav-link" href="#">Regulamin wesela <span> ▶</span></a>
+					<a class="nav-link active" href="#confirm">Potwierdzenie przybycia <span> ▶</span></a>
+					<a class="nav-link" href="info.html">Inforacje organizacyjne <span> ▶</span></a>
+					<a class="nav-link" href="regulations.html">Regulamin wesela <span> ▶</span></a>
 				</nav> 
 			</div>
-
+<!--
 			<div class="row countdown">
 				<div class="countdown-header">Do ślubu zostało jeszcze:</div>
 				<ul class="countdown-boxes">
@@ -90,11 +90,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					<li>Min: <span class="js-countdownm">06</span></li>                 
 					<li>Sek: <span class="js-countdown-s">06</span></li>
 				</ul>
-			</div>
+		</div>
+		-->	
 
-			<div class="row justify-content-end box">
+			<div class="row justify-content-end box" id="confirm">
 				<div class="col-lg-2 col-12"><span class="box-no">1.</span></div>
-				<div class="col-lg-9 col-12" id="confirm">
+				<div class="col-lg-9 col-12">
 					<h3>Potwierdź przybycie na ślub i poprawiny</h3>
 
 					<h4>1. Możesz to zrobić online.</h4>
