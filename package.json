@@ -18,7 +18,7 @@
     "watch:js": "onchange 'src/js/*.js' -- npm run uglify",
     "watch:img": "onchange 'src/img/' -- npm run imagemin"
   },
-  "author": "Renata Giera",
+  "author": "Renata Giera-Dubiel",
   "license": "MTI",
   "dependencies": {
     "bootstrap": "^4.3.1",
